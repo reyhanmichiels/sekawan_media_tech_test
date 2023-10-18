@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  db_sm_tech_test:
+    container_name: db_sm_tech_test
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - volume_sm_tech_test:/var/lib/mysql
+    networks:
+      - network_sm_tech_test
+
+volumes:
+  volume_sm_tech_test:
+    name: "volume_sm_tech_test"
+
+networks:
+  network_sm_tech_test:
+    name: network_sm_tech_test
+    driver: bridge
