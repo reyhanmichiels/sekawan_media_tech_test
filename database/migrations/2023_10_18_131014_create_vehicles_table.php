@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->ulid("id")->primary();
-            $table->string('name', 100);
-            $table->enum("role", ["driver", "admin", "pool_manager"])->default("driver");
-            $table->string('email', 100)->unique();
-            $table->string('password');
+            $table->string("name", 100);
+            $table->enum("type", ["people_transport", "mining_transport"]);
+            $table->enum("status", ["rent", "available"]);
+            $table->enum("owner", ["company", "rent"]);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('vehicles');
     }
 };
