@@ -19,3 +19,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/regist', 'regist');
     Route::post('/login', 'login');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
