@@ -25,4 +25,14 @@ class User extends Authenticatable
         'password',
         "role"
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
