@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\RentController;
 use App\Http\Controllers\Api\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::post('/vehicles/{vehicle}/rents', [VehicleController::class, "rentVehicle"]);
+
+    Route::post('/rents/{rent}/approve', [RentController::class, "approve"]);
 });
