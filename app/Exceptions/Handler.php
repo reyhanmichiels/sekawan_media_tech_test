@@ -2,7 +2,11 @@
 
 namespace App\Exceptions;
 
+use App\Libraries\ApiResponse;
+use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -23,8 +27,28 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function (Exception $e) {
+
+            if ($e instanceof NotFoundHttpException && str_contains($e->getMessage(), 'model')) {
+                $firstIndex = strpos($e->getMessage(), "Models\\") + 7;
+                $lastIndex = strpos($e->getMessage(), "]");
+                $model = substr($e->getMessage(), $firstIndex, $lastIndex - $firstIndex);
+
+                return ApiResponse::error("$model id not found", 400);
+            }
+
+            if ($e instanceof NotFoundHttpException) {
+                return ApiResponse::error("Route not found", 404);
+            }
+
+            if ($e instanceof AuthenticationException) {
+                return ApiResponse::error("Unauthorized", 401);
+            }
+
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ],  500);
         });
     }
 }
