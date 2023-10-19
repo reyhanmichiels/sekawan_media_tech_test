@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\RentController;
 use App\Http\Controllers\Api\VehicleController;
 use Illuminate\Http\Request;
@@ -28,4 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/vehicles/{vehicle}/rents', [VehicleController::class, "rentVehicle"]);
 
     Route::post('/rents/{rent}/approve', [RentController::class, "approve"]);
+
+    Route::get('/dashboards', [DashboardController::class, "getAll"]);
 });
