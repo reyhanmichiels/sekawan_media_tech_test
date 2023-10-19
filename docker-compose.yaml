@@ -10,7 +10,7 @@ services:
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_DATABASE: ${DB_DATABASE}
     ports:
-      - "${DB_PORT}:3306"
+      - "3307:${DB_PORT}"
     volumes:
       - volume_sm_tech_test:/var/lib/mysql
     networks:
