@@ -52,12 +52,12 @@ class VehicleController extends Controller
         }
 
         $userApprove1 = User::find($request->user_approve_id_1);
-        if ($userApprove1->role != "manager_pool") {
+        if ($userApprove1->role != "pool_manager") {
             return ApiResponse::error("user approve 1 is not a manager pool", 400);
         }
 
         $userApprove2 = User::find($request->user_approve_id_2);
-        if ($userApprove2->role != "manager_pool") {
+        if ($userApprove2->role != "pool_manager") {
             return ApiResponse::error("user approve 2 is not a manager pool", 400);
         }
 
