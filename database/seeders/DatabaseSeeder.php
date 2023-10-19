@@ -61,14 +61,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Vehicle::create([
-            "name" => "minging 1",
+            "name" => "mining 1",
             "type" => "mining_transport",
             "status" => "available",
             "owner" => "company"
         ]);
 
         Vehicle::create([
-            "name" => "people 2",
+            "name" => "mining 2",
             "type" => "mining_transport",
             "status" => "available",
             "owner" => "rent"
