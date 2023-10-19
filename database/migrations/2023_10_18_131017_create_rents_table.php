@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignUlid("user_approve_id_2")->constrained(table: 'users', column: 'id')->onUpdate("cascade")->onDelete("cascade");
             $table->boolean("approve_status_1")->default(false);
             $table->boolean("approve_status_2")->default(false);
-            $table->enum("status", ["wait for approval", "on going", "finished"]);
+            $table->enum("status", ["wait for approval", "accepted", "finished"]);
             $table->date("StartAt");
             $table->date("EndAt");
             $table->timestamps();
