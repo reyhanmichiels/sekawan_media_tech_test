@@ -31,4 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/rents/{rent}/approve', [RentController::class, "approve"]);
 
     Route::get('/dashboards', [DashboardController::class, "getAll"]);
+
 });
+
+Route::get("/rents/export", [RentController::class, "export"]);

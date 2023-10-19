@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use App\Exports\RentExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RentController extends Controller
 {
@@ -51,5 +53,14 @@ class RentController extends Controller
             'message' => 'successfully approve rent',
         ];
         return ApiResponse::success($data, 200);
+    }
+
+    public function export()
+    {
+        if (!(Gate::allows('isAdmin') or Gate::allows('isPoolManager'))) {
+            return ApiResponse::error("Unauthorized", 403);
+        };
+        
+        return Excel::download(new RentExport, 'rents.xlsx');
     }
 }
