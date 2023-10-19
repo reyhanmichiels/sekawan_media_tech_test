@@ -20,21 +20,28 @@ class DatabaseSeeder extends Seeder
         User::create([
             "name" => "userAdmin",
             "role" => "admin",
-            "email" => "admin@gtest.com",
+            "email" => "admin@test.com",
             "password" => bcrypt("password")
         ]);
 
         User::create([
-            "name" => "manager",
+            "name" => "manager1",
             "role" => "pool_manager",
-            "email" => "manager@gtest.com",
+            "email" => "manager1@test.com",
+            "password" => bcrypt("password")
+        ]);
+
+        User::create([
+            "name" => "manager2",
+            "role" => "pool_manager",
+            "email" => "manager2@test.com",
             "password" => bcrypt("password")
         ]);
 
         User::create([
             "name" => "driver",
             "role" => "driver",
-            "email" => "driver@gtest.com",
+            "email" => "driver@test.com",
             "password" => bcrypt("password")
         ]);
 
