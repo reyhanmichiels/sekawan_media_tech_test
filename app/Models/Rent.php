@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Rent extends Model
 {
@@ -21,4 +22,24 @@ class Rent extends Model
         "StartAt",
         "EndAt"
     ];
+
+    public function getStartAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-m-Y');
+    }
+
+    public function getEndAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-m-Y');
+    }
+
+    public function setStartAtAttribute($value)
+    {
+        $this->attributes['StartAt'] =  Carbon::parse($value);
+    }
+
+    public function setEndAtAttribute($value)
+    {
+        $this->attributes['EndAt'] =  Carbon::parse($value);
+    }
 }
