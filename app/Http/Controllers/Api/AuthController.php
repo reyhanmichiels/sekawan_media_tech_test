@@ -20,7 +20,7 @@ class AuthController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return ApiResponse::error($validate->errors(), 404);
+            return ApiResponse::error($validate->errors(), 400);
         }
 
         try {
@@ -49,7 +49,7 @@ class AuthController extends Controller
         ]);
 
         if ($validate->fails()) {
-            return ApiResponse::error($validate->errors(), 404);
+            return ApiResponse::error($validate->errors(), 400);
         }
 
         $credentials = $request->only("email", "password");
