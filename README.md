@@ -21,52 +21,52 @@
 
 ## Docs
 ### Registration
-Endpoint: localhost:8000/api/regist
-JWT Token: Doesn't Need
-Authorization: all role
-Description: This endpoint is used for regist new user to application with role as driver
+<p>Endpoint: localhost:8000/api/regist</p>
+<p>JWT Token: Doesn't Need</p>
+<p>Authorization: all role</p>
+<p>Description: This endpoint is used for regist new user to application with role as driver</p>
 Pics here
 
 ### Login
-Endpoint: localhost:8000/api/login
-JWT Token: Doesn't Need
-Authorization: all role
-Description: This endpoint is used for login to system, this endpoint return jwt token that you can use for endpoint that need authentication
+<p>Endpoint: localhost:8000/api/login</p>
+<p>JWT Token: Doesn't Need</p>
+<p>Authorization: all role</p>
+<p>Description: This endpoint is used for login to system, this endpoint return jwt token that you can use for endpoint that need authentication</p>
 Pics here
 
 ### Logout
-Endpoint: localhost:8000/api/logout
-JWT Token: Need
-Authorization: all role
-Description: This endpoint is used for logout from system, after log out, token that your have will be expired
+<p>Endpoint: localhost:8000/api/logout</p>
+<p>JWT Token: Need</p>
+<p>Authorization: all role</p>
+<p>Description: This endpoint is used for logout from system, after log out, token that your have will be expired</p>
 Pics here
 
 ### Create Rent
-Endpoint: localhost:8000/api/vehicles/{vehicleId}/rents
-JWT Token: Need
-Authorization: admin
-Description: This endpoint is used for create new rent
+<p>Endpoint: localhost:8000/api/vehicles/{vehicleId}/rents</p>
+<p>JWT Token: Need</p>
+<p>Authorization: </p>
+<p>Description: This endpoint is used for create new rent</p>
 Pics here
 
 ### Approve Rent
-Endpoint: localhost:8000/api/rents/{rentId}/approve
-JWT Token: Need
-Authorization: pool_manager
-Description: This endpoint is used for approve rent
+<p>Endpoint: localhost:8000/api/rents/{rentId}/approve</p>
+<p>JWT Token: Need</p>
+<p>Authorization: pool_manager</p>
+<p>Description: This endpoint is used for approve rent</p>
 Pics here
 
 ### Get Dashboards
-Endpoint: localhost:8000/api/dashboards
-JWT Token: Need
-Authorization: admin or pool_manager
-Description: This endpoint is used for see dashboard
+<p>Endpoint: localhost:8000/api/dashboards</p>
+<p>JWT Token: Need</p>
+<p>Authorization: admin or pool_manager</p>
+<p>Description: This endpoint is used for see dashboard</p>
 Pics here
 
 ### Export
-Endpoint: localhost:8000/api/rents/export
-JWT Token: Need
-Authorization: admin or pool_manager
-Description: This endpoint is used for get rent report with form excel
+<p>Endpoint: localhost:8000/api/rents/export</p>
+<p>JWT Token: Need</p>
+<p>Authorization: admin or pool_manager</p>
+<p>Description: This endpoint is used for get rent report with form excel</p>
 Pics here
 
 ### Postman Docs
