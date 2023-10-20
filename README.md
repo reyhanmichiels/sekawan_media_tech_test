@@ -88,5 +88,7 @@ https://documenter.getpostman.com/view/25516509/2s9YRB1rNq
 | manager1@test.com | password | pool_manager |
 | manager2@test.com | password | pool_manager |
 
+## Physical Data Design
+![image](https://github.com/reyhanmichiels/sekawan_media_tech_test/assets/103521934/7013e788-c5f9-40c8-a1c4-d53887efca79)
 
 
