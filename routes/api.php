@@ -32,6 +32,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboards', [DashboardController::class, "getAll"]);
 
+    Route::get("/rents/export", [RentController::class, "export"]);
 });
-
-Route::get("/rents/export", [RentController::class, "export"]);
